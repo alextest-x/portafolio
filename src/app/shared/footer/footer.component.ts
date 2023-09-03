@@ -13,8 +13,8 @@ export class FooterComponent implements OnInit {
   constructor(public _servicio: InfoPaginaService){}
 
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
+   // throw new Error('Method not implemented.');
   }
 
 }
