@@ -10,7 +10,7 @@ export class ItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    throw new Error('Method not implemented.');
+    //throw new Error('Method not implemented.');
   }
 
 

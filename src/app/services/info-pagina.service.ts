@@ -1,7 +1,9 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { InfoPagina } from '../interfaces/info-pagina.interface';
+//import { InfoEquipo } from './../interfaces/info-equipo.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +11,20 @@ import { InfoPagina } from '../interfaces/info-pagina.interface';
 export class InfoPaginaService {
 
 
-  //poniendo la interface InfoPgina en lugar de any[]
+  //poniendo la interface InfoPagina en lugar de any[]
   //info:any ={}
 
    info: InfoPagina = {};
    cargada = false;
 
    //equipo: EquipoPagina [] = [];
-   equipo: any [] = [];
+   //equipo: InfoEquipo [] = [];
 
   constructor( private http: HttpClient ) {
 
     this.cargarInfo();
-    this.cargarEquipo();
+   // this.cargarEquipo();
+
 
   }
 
@@ -53,13 +56,4 @@ this.http.get('assets/data/data-pagina.json')
         this.info = resp;
         });
       }
-
-
-    private cargarEquipo(){
-      this.http.get('https://angular-html-f6af5-default-rtdb.firebaseio.com/equipo.json')
-      .subscribe( ( resp: any ) => {
-         this.equipo = resp;
-
-         });
-       }
 }

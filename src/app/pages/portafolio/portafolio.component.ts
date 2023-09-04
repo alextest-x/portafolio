@@ -12,7 +12,7 @@ export class PortafolioComponent implements OnInit{
 // en la vista portafolio.html
   constructor( public productosService:  ProductosService){}
   ngOnInit() {
-    throw new Error('Method not implemented.');
+    //throw new Error('Method not implemented.');
   }
 
 

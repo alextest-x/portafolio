@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoPaginaService } from '../../services/info-pagina.service';
+import { InfoEquipoService } from '../../services/info-equipo.service';
 
 @Component({
   selector: 'app-about',
@@ -8,12 +9,14 @@ import { InfoPaginaService } from '../../services/info-pagina.service';
 })
 export class AboutComponent implements OnInit{
 
+
   //para usar el servicio hay que inyectarlo
 
-  constructor(public infoService: InfoPaginaService)
-      {}
-  ngOnInit() {
-    throw new Error('Method not implemented.');
-  }
+  constructor(public infoService:  InfoPaginaService,
+              public infoService2: InfoEquipoService){}
+
+              ngOnInit() {
+              //throw new Error('Method not implemented.');
+              }
 
 }
