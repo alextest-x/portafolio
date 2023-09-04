@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+
+import { Routes, RouterModule } from '@angular/router';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
@@ -24,7 +25,9 @@ const app_routes: Routes = [
   //es una parte de la ruta del index.html que se encuentra en esa direccion
   //en caso de no tener el httpaccess para configurar las rutas
 
-  imports: [RouterModule.forRoot(app_routes, { useHash:true })],
+  imports: [
+            RouterModule.forRoot(app_routes, { useHash:true })
+  ],
 
   //se exporta para que se pueda usar afuera este componente
   exports: [RouterModule]

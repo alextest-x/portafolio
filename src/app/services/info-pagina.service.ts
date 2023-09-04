@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { InfoPagina } from '../interfaces/info-pagina.interface';
-import { EquipoPagina } from '../interfaces/equipo-pagina.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,7 @@ export class InfoPaginaService {
    equipo: any [] = [];
 
   constructor( private http: HttpClient ) {
+
     this.cargarInfo();
     this.cargarEquipo();
 
@@ -56,10 +57,9 @@ this.http.get('assets/data/data-pagina.json')
 
     private cargarEquipo(){
       this.http.get('https://angular-html-f6af5-default-rtdb.firebaseio.com/equipo.json')
-      .subscribe( ( resultado: any ) => {
-         this.equipo = resultado;
+      .subscribe( ( resp: any ) => {
+         this.equipo = resp;
 
          });
        }
-
- }
+}
