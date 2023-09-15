@@ -11,14 +11,9 @@ export class AppComponent {
 
   //vamos a inyectar el InfoPaginaService
   //en el constructor
-
-
-  constructor(public infoPaginaService: InfoPaginaService,
-              public productosService: ProductosService){
-
-
+  constructor( public infoPaginaService: InfoPaginaService,
+               public productosService: ProductosService ) {
 
   }
-
 
 }

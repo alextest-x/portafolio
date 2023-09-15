@@ -15,8 +15,7 @@ export class AboutComponent implements OnInit{
   constructor(public infoService:  InfoPaginaService,
               public infoService2: InfoEquipoService){}
 
-              ngOnInit() {
-              //throw new Error('Method not implemented.');
-              }
+  ngOnInit() {
+  }
 
 }

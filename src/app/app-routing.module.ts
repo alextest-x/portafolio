@@ -4,18 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
-
+import { SearchComponent } from './pages/search/search.component';
 
 
 const app_routes: Routes = [
-    {path: 'home', component: PortafolioComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'item', component: ItemComponent},
-
-    //redirecciona a portafolio component
-    {path: '**', pathMatch: 'full',  redirectTo: 'home'}
-  ];
-
+    { path: 'home', component: PortafolioComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'item/:id', component: ItemComponent },
+    { path: 'search/:termino', component: SearchComponent },
+    { path: '**', pathMatch: 'full', redirectTo: 'home' }
+];
 
 
 @NgModule({
@@ -24,12 +22,19 @@ const app_routes: Routes = [
   //y todas las paginas pone un # y lo que viene despues de # no es un directorio en el sitio web
   //es una parte de la ruta del index.html que se encuentra en esa direccion
   //en caso de no tener el httpaccess para configurar las rutas
-
-  imports: [
+  
+  //se exporta para que se pueda usar afuera este componente
+   imports: [
             RouterModule.forRoot(app_routes, { useHash:true })
   ],
+ exports: [
+     RouterModule
+     ]
+ })
+ export class AppRoutingModule { }
 
-  //se exporta para que se pueda usar afuera este componente
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+
+
+
+
+
